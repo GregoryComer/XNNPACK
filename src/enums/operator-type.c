@@ -101,6 +101,7 @@ static const char data[] =
   "Fully Connected (NC, QD8, F16, QC8W)\0"
   "Fully Connected (NC, QD8, F16, QC4W)\0"
   "Fully Connected (NC, QD8, F32, QC4W)\0"
+  "Fully Connected (NC, QD8, F32, QB4W)\0"
   "Fully Connected (NC, QD8, F32, QC8W)\0"
   "Fully Connected (NC, QS8)\0"
   "Fully Connected (NC, QS8, QC8W)\0"
