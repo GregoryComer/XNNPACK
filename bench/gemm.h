@@ -11,7 +11,8 @@
 #include <benchmark/benchmark.h>
 
 #define BENCHMARK_GEMM(gemm_fn) \
-  BENCHMARK_CAPTURE(gemm_fn, mobilenet_v1, "MobileNet v1")->Apply(MobileNetV1GemmArguments)->UseRealTime(); \
+  BENCHMARK_CAPTURE(gemm_fn, srcnn935, "LLM")->Apply(LLMGemmArguments)->UseRealTime();
+  /*BENCHMARK_CAPTURE(gemm_fn, mobilenet_v1, "MobileNet v1")->Apply(MobileNetV1GemmArguments)->UseRealTime(); \
   BENCHMARK_CAPTURE(gemm_fn, mobilenet_v2, "MobileNet v2")->Apply(MobileNetV2GemmArguments)->UseRealTime(); \
   BENCHMARK_CAPTURE(gemm_fn, mobilenet_v3_small, "MobileNet v3 Small")->Apply(MobileNetV3SmallGemmArguments)->UseRealTime(); \
   BENCHMARK_CAPTURE(gemm_fn, mobilenet_v3_large, "MobileNet v3 Large")->Apply(MobileNetV3LargeGemmArguments)->UseRealTime(); \
@@ -31,7 +32,7 @@
   BENCHMARK_CAPTURE(gemm_fn, squeezenet_v11, "SqueezeNet 1.1")->Apply(SqueezeNetV11GemmArguments)->UseRealTime(); \
   BENCHMARK_CAPTURE(gemm_fn, vgg, "VGG")->Apply(VGGGemmArguments)->UseRealTime(); \
   BENCHMARK_CAPTURE(gemm_fn, srcnn915, "SRCNN (9-1-5)")->Apply(SRCNN915GemmArguments)->UseRealTime(); \
-  BENCHMARK_CAPTURE(gemm_fn, srcnn935, "SRCNN (9-3-5)")->Apply(SRCNN935GemmArguments)->UseRealTime();
+  BENCHMARK_CAPTURE(gemm_fn, srcnn935, "SRCNN (9-3-5)")->Apply(SRCNN935GemmArguments)->UseRealTime(); \*/
 
 
 // Removed due to OOM SEGFAULT on 32 bit ARM.
@@ -684,3 +685,24 @@ static void SRCNN955GemmArguments(benchmark::internal::Benchmark* b) {
   b->Args({372 * 372, 32, 64 * 5 * 5});
   b->Args({368 * 368,  1, 32 * 5 * 5});
 }
+
+// Large Language Model (Generic)
+static void LLMGemmArguments(benchmark::internal::Benchmark* b) {
+  b->ArgNames({"M", "N", "K", "Bl"});
+
+  b->Args({ 16, 16, 1024, 32 });
+  b->Args({ 16, 16, 1024, 256 });
+
+  b->Args({ 16, 128, 1024, 32 });
+  b->Args({ 16, 128, 1024, 256 });
+
+  b->Args({ 16, 4096, 1024, 32 });
+  b->Args({ 16, 4096, 1024, 256 });
+
+  b->Args({ 16, 11008, 4096, 32 });
+  b->Args({ 16, 11008, 4096, 256 });
+
+  b->Args({ 16, 32000, 4096, 32 });
+  b->Args({ 16, 32000, 4096, 256 });
+}
+

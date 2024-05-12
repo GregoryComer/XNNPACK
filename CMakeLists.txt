@@ -23,6 +23,11 @@ SET(CMAKE_CXX_STANDARD 14)
 SET(CMAKE_CXX_STANDARD_REQUIRED YES)
 SET(CMAKE_CXX_EXTENSIONS NO)
 
+# DO NOT COMMIT
+#add_compile_options(-fsanitize=address)
+#add_link_options(-fsanitize=address)
+add_compile_options(-mavx2)
+
 # ---[ Options.
 SET(XNNPACK_LIBRARY_TYPE "default" CACHE STRING "Type of library (shared, static, or default) to build")
 SET_PROPERTY(CACHE XNNPACK_LIBRARY_TYPE PROPERTY STRINGS default static shared)
@@ -4101,6 +4106,11 @@ IF(XNNPACK_BUILD_BENCHMARKS)
   TARGET_INCLUDE_DIRECTORIES(qs8-qc8w-gemm-fp32-bench PRIVATE . include src)
   TARGET_LINK_LIBRARIES(qs8-qc8w-gemm-fp32-bench PRIVATE benchmark::benchmark fp16 pthreadpool jit microparams-init)
   TARGET_LINK_LIBRARIES(qs8-qc8w-gemm-fp32-bench PRIVATE bench-utils jit hardware-config logging microkernels-all microparams-init packing)
+
+  ADD_EXECUTABLE(qs8-qb4w-gemm-fp16-bench bench/qs8-qb4w-gemm-fp16.cc)
+  TARGET_INCLUDE_DIRECTORIES(qs8-qb4w-gemm-fp16-bench PRIVATE . include src)
+  TARGET_LINK_LIBRARIES(qs8-qb4w-gemm-fp16-bench PRIVATE benchmark::benchmark fp16 pthreadpool jit microparams-init)
+  TARGET_LINK_LIBRARIES(qs8-qb4w-gemm-fp16-bench PRIVATE bench-utils jit hardware-config logging microkernels-all microparams-init packing)
 
   ADD_EXECUTABLE(qu8-gemm-fp32-bench bench/qu8-gemm-fp32.cc)
   TARGET_INCLUDE_DIRECTORIES(qu8-gemm-fp32-bench PRIVATE . include src)

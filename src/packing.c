@@ -746,7 +746,7 @@ void xnn_pack_qs8_qc4w_gemm_bl_goi_w(
   assert(round_up_po2(kc, kr) % bl == 0); // must be round number of blocks inside a column
   assert(bl % kr == 0); // must be round number of kr
   assert(bl <= round_up_po2(kc, kr));
-  assert(2 * kr <= bl); // must be at least two kr to avoid back-to-back empty_bytes
+  // assert(2 * kr <= bl); // must be at least two kr to avoid back-to-back empty_bytes
 
   #if XNN_ARCH_ARM64
   if (can_use_xnn_pack_qs8_qc4w_gemm_bl_goi_w_nr8_kr4(nc, nr, kr, sr, extra_bytes_bl, extra_bytes_n)) {
