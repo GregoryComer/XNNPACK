@@ -226,6 +226,11 @@ INSTANTIATE_TEST_SUITE_P(
     [](const testing::TestParamInfo<GemmTest::ParamType>& info) {
       return info.param.test_name;
     });
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> ec887e282 (QB4W MLAL metakernel)
 
 
 #if XNN_ARCH_X86 || XNN_ARCH_X86_64
