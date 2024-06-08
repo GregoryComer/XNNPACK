@@ -23,8 +23,12 @@ SET(CMAKE_CXX_STANDARD 14)
 SET(CMAKE_CXX_STANDARD_REQUIRED YES)
 SET(CMAKE_CXX_EXTENSIONS NO)
 
+
+# Scale dtype expirement.
+add_compile_definitions(SCALE_CTYPE=uint16_t SCALE_DTYPE_FP16)
 add_compile_options(-fsanitize=address)
 add_link_options(-fsanitize=address)
+
 
 # ---[ Options.
 SET(XNNPACK_LIBRARY_TYPE "default" CACHE STRING "Type of library (shared, static, or default) to build")

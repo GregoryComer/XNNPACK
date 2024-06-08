@@ -13,6 +13,8 @@
 #include <xnnpack/math.h>
 #include <xnnpack/unaligned.h>
 
+#include <fp16/fp16.h>
+
 
 void xnn_qd8_f32_qb4w_gemm_minmax_ukernel_1x2__scalar(
     size_t mr,
@@ -72,15 +74,30 @@ void xnn_qd8_f32_qb4w_gemm_minmax_ukernel_1x2__scalar(
     }
     // accumulate in float
       float vf0x0 = vacc0x0;
-      const float vfilter_output_scale0 = unaligned_indexed_load_f32(w, 0);
       float vf0x1 = vacc0x1;
+
+    #ifdef SCALE_DTYPE_FP16
+      const float vfilter_output_scale0 = fp16_ieee_to_fp32_value(unaligned_indexed_load_u16(w, 0));
+      const float vfilter_output_scale1 = fp16_ieee_to_fp32_value(unaligned_indexed_load_u16(w, 1));
+    #elif defined(SCALE_DTYPE_BF16)
+
+    #else
+      const float vfilter_output_scale0 = unaligned_indexed_load_f32(w, 0);
       const float vfilter_output_scale1 = unaligned_indexed_load_f32(w, 1);
+    #endif
 
       vf0x0 *= vfilter_output_scale0;
       vout0x0 += vf0x0;
       vf0x1 *= vfilter_output_scale1;
       vout0x1 += vf0x1;
+
+    #ifdef SCALE_DTYPE_FP16
+      w = (const uint16_t*) w + 2;
+    #elif defined(SCALE_DTYPE_BF16)
+
+    #else
       w = (const float*) w + 2;
+    #endif
     }
 
     vout0x0 /= 16;
