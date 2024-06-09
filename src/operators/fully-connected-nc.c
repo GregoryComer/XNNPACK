@@ -757,7 +757,7 @@ enum xnn_status xnn_create_fully_connected_nc_qd8_f32_qb4w(
         /* ksum= */ sizeof(float) +
         /* bias= */ sizeof(float);
 
-    xnn_init_qs8_qc8w_bl_scale_fp32_params(
+    xnn_init_blockwise_scale_fp32_params(
         output_channels, gemm_config->nr, gemm_config->nr,
         gemm_config->nr * weights_stride,
         gemm_config->nr * weights_stride,
