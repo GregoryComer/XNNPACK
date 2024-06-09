@@ -518,7 +518,6 @@ void xnn_compute_dqgemm_bl(
       mr_block_size,
       nr_block_size,
       context->k_scaled,
-      context->block_size,
       (const void*) ((uintptr_t) context->a + mr_block_start * a_stride),
       a_stride,
       (const void*) ((uintptr_t) context->packed_w + nr_block_start * context->w_stride),

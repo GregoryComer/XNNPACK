@@ -77,7 +77,6 @@ typedef void (*xnn_dqgemm_bl_ukernel_fn)(
     size_t mr,
     size_t nr,
     size_t k,
-    size_t bl,
     const void* a,
     size_t a_stride,
     const void* w,

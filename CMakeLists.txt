@@ -23,6 +23,9 @@ SET(CMAKE_CXX_STANDARD 14)
 SET(CMAKE_CXX_STANDARD_REQUIRED YES)
 SET(CMAKE_CXX_EXTENSIONS NO)
 
+add_compile_options(-fsanitize=address)
+add_link_options(-fsanitize=address)
+
 # ---[ Options.
 SET(XNNPACK_LIBRARY_TYPE "default" CACHE STRING "Type of library (shared, static, or default) to build")
 SET_PROPERTY(CACHE XNNPACK_LIBRARY_TYPE PROPERTY STRINGS default static shared)
