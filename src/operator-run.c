@@ -2413,7 +2413,6 @@ void xnn_compute_hmp_gemm(
     context->dq_bl_ukernel.function[uarch_index](
         mr_block_size,
         nr_block_size,
-        context->block_size,
         context->k_scaled,
         (const void*) ((uintptr_t) context->a + mr_block_start * a_stride),
         a_stride,

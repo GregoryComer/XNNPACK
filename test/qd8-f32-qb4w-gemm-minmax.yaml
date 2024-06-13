@@ -59,3 +59,10 @@
   init: xnn_init_f32_qb4w_minmax_avx_params
   pack: xnn_pack_qs8_qb4w_gemm_goi_w
   k-block: 16
+
+# Neon Dot
+
+- name: xnn_qd8_f32_qc4w_bl_gemm_minmax_ukernel_1x8c4__neondot
+  init: xnn_init_f32_qb4w_minmax_scalar_params
+  pack: xnn_pack_qs8_qb4w_gemm_goi_w
+  k-block: 8

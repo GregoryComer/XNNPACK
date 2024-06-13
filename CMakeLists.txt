@@ -25,9 +25,9 @@ SET(CMAKE_CXX_EXTENSIONS NO)
 
 
 # Scale dtype expirement.
-add_compile_definitions(SCALE_CTYPE=uint16_t SCALE_DTYPE_FP16)
-add_compile_options(-fsanitize=address)
-add_link_options(-fsanitize=address)
+#add_compile_definitions(SCALE_CTYPE=uint16_t SCALE_DTYPE_FP16)
+add_compile_definitions(SCALE_CTYPE=uint16_t SCALE_DTYPE_BF16)
+#add_compile_definitions(SCALE_CTYPE=float SCALE_DTYPE_FP32)
 
 
 # ---[ Options.

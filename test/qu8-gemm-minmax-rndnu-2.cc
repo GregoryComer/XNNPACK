@@ -320,6 +320,7 @@ std::vector<GemmTestParams> CreateTests1(
           .b_zero_point(0)
       , test_func, isa_check)
       .loop_k(1, k_block * 3, k_block + 1));
+      
 
   return gemm_tests;
 }

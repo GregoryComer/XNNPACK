@@ -551,7 +551,18 @@ void xnn_pack_qs8_qb4w_gemm_goi_w(
 
           size_t block_index = kr_block_start / bl;
           size_t scale_index = (nr_block_start + nr_block_offset) * num_blocks + block_index;
-          unaligned_indexed_store_f32(packed_b, nr_block_offset, unaligned_indexed_load_f32(packed_b, nr_block_offset) - (float) ksum * izp * scale[scale_index] * 16);
+
+          float block_scale = scale[scale_index];
+      #ifdef SCALE_PACK_REDUCED_PRECISION
+        #ifdef SCALE_DTYPE_FP16
+          block_scale = fp16_ieee_to_fp32_value(fp16_ieee_from_fp32_value(block_scale));
+        #elif defined(SCALE_DTYPE_BF16)
+          block_scale = math_cvt_f32_bf16(math_cvt_bf16_f32(block_scale));
+        #else
+        #endif
+      #endif
+          unaligned_indexed_store_f32(packed_b, nr_block_offset, unaligned_indexed_load_f32(packed_b, nr_block_offset) - (float) ksum * izp * block_scale * 16);
+
           packed_weights = (uint8_t*) packed_weights + kr;  // kr * 2 nibbles
         }
         if (((2 * kr) + kr_block_start) % bl == 0) {

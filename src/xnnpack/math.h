@@ -12,6 +12,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <assert.h>
+#include <string.h>
 
 #ifdef _MSC_VER
   #include <intrin.h>
@@ -366,3 +367,17 @@ XNN_INLINE static uint32_t math_cvt_sat_u32_f64(double x) {
   #endif
 }
 #endif
+
+
+XNN_INLINE static float math_cvt_f32_bf16(uint16_t x) {
+  uint32_t shifted = (uint32_t) x << 16;
+  float result;
+  memcpy(&result, &shifted, sizeof(result));
+  return result;
+}
+
+XNN_INLINE static uint16_t math_cvt_bf16_f32(float x) {
+  uint32_t int_val;
+  memcpy(&int_val, &x, sizeof(int_val));
+  return (uint16_t) (int_val >> 16);
+}

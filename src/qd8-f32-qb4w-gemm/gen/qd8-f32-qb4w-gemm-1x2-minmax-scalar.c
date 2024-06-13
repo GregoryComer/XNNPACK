@@ -80,7 +80,8 @@ void xnn_qd8_f32_qb4w_gemm_minmax_ukernel_1x2__scalar(
       const float vfilter_output_scale0 = fp16_ieee_to_fp32_value(unaligned_indexed_load_u16(w, 0));
       const float vfilter_output_scale1 = fp16_ieee_to_fp32_value(unaligned_indexed_load_u16(w, 1));
     #elif defined(SCALE_DTYPE_BF16)
-
+      const float vfilter_output_scale0 = math_cvt_f32_bf16(((const uint16_t*) w)[0]);
+      const float vfilter_output_scale1 = math_cvt_f32_bf16(((const uint16_t*) w)[1]);
     #else
       const float vfilter_output_scale0 = unaligned_indexed_load_f32(w, 0);
       const float vfilter_output_scale1 = unaligned_indexed_load_f32(w, 1);
@@ -94,7 +95,7 @@ void xnn_qd8_f32_qb4w_gemm_minmax_ukernel_1x2__scalar(
     #ifdef SCALE_DTYPE_FP16
       w = (const uint16_t*) w + 2;
     #elif defined(SCALE_DTYPE_BF16)
-
+      w = (const uint16_t*) w + 2;
     #else
       w = (const float*) w + 2;
     #endif

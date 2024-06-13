@@ -700,7 +700,7 @@ enum xnn_status xnn_create_fully_connected_nc_qd8_f32_qb4w(
   // Per input_channel
   size_t block_scale_bytes = 0;
   if (block_size != 0) {
-    block_scale_bytes += num_blocks * sizeof(float);
+    block_scale_bytes += num_blocks * sizeof(SCALE_CTYPE);
   }
 
   const size_t packed_weights_size =
@@ -741,7 +741,7 @@ enum xnn_status xnn_create_fully_connected_nc_qd8_f32_qb4w(
       block_size,
       kernel, /*bias=*/NULL, /*scale=*/kernel_scale,
       weights_ptr,
-      /* extra_bytes_bl */ gemm_config->nr * sizeof(float), /* TODO: get this from the op */
+      /* extra_bytes_bl */ gemm_config->nr * sizeof(SCALE_CTYPE), /* TODO: get this from the op */
       /* extra_bytes_n */ gemm_config->nr * sizeof(float),
       &packing_params);
 
@@ -751,12 +751,31 @@ enum xnn_status xnn_create_fully_connected_nc_qd8_f32_qb4w(
     void* weights = (void*) ((uintptr_t) weights_ptr +
       gemm_config->nr * (sizeof(float) + (block_size * sizeof(int8_t) / 2)));
 
-    const size_t block_stride = /* weights */ block_size / 2 + sizeof(float);
+    const size_t block_stride = /* weights */ block_size / 2 + sizeof(SCALE_CTYPE);
     const size_t weights_stride = /* weights */ k_stride * sizeof(int8_t) +
-        /* scales= */ num_blocks * sizeof(float) +
+        /* scales= */ num_blocks * sizeof(SCALE_CTYPE) +
         /* ksum= */ sizeof(float) +
         /* bias= */ sizeof(float);
 
+  #ifdef SCALE_DTYPE_FP16
+    xnn_init_blockwise_scale_fp16_params(
+        output_channels, gemm_config->nr, gemm_config->nr,
+        gemm_config->nr * weights_stride,
+        gemm_config->nr * weights_stride,
+        /* num_blocks=*/ num_blocks,
+        /* block_stride=*/ gemm_config->nr * block_stride,
+        0,
+        kernel_scale, weights);
+  #elif defined(SCALE_DTYPE_BF16)
+    xnn_init_blockwise_scale_bf16_params(
+        output_channels, gemm_config->nr, gemm_config->nr,
+        gemm_config->nr * weights_stride,
+        gemm_config->nr * weights_stride,
+        /* num_blocks=*/ num_blocks,
+        /* block_stride=*/ gemm_config->nr * block_stride,
+        0,
+        kernel_scale, weights);
+  #else
     xnn_init_blockwise_scale_fp32_params(
         output_channels, gemm_config->nr, gemm_config->nr,
         gemm_config->nr * weights_stride,
@@ -765,6 +784,7 @@ enum xnn_status xnn_create_fully_connected_nc_qd8_f32_qb4w(
         /* block_stride=*/ gemm_config->nr * block_stride,
         0,
         kernel_scale, weights);
+  #endif
 
     // Fill in bias
     if (bias != NULL) {
@@ -1645,7 +1665,7 @@ static enum xnn_status reshape_fully_connected_nc(
   // If blockwise quantization is enabled, we need to update w_stride to account for extra scales
   if (fully_connected_op->type == xnn_operator_type_fully_connected_nc_qd8_f32_qb4w) {
     size_t num_blocks = input_channels / fully_connected_op->k_block_size;
-    w_stride += num_blocks * sizeof(float);
+    w_stride += num_blocks * sizeof(SCALE_CTYPE);
   }
 
   fully_connected_op->context.gemm = (struct gemm_context) {
@@ -1860,8 +1880,8 @@ enum xnn_status xnn_reshape_fully_connected_nc_qd8_f32_qb4w(
     /*blockwise_quantization=*/true,
     /*extra_weights_elements_size=*/sizeof(float) + sizeof(float), // For bias and ksum.
     /*log2_output_element_size=*/XNN_LOG2_SIZEOF_FLOAT,
-    &fully_connected_op->params.f32_qc4w_minmax,
-    sizeof(fully_connected_op->params.f32_qc4w_minmax),
+    &fully_connected_op->params.f32_qb4w_minmax,
+    sizeof(fully_connected_op->params.f32_qb4w_minmax),
     threadpool);
 }
 

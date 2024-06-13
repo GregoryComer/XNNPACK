@@ -1626,7 +1626,15 @@ void GemmMicrokernelTester::Test(
       kernel_scale2d.data(),
       (void*) start);
   #elif defined(SCALE_DTYPE_BF16)
-  
+    xnn_init_blockwise_scale_bf16_params(
+      n(), nr(), nr(),
+      stride,
+      stride,
+      /*num_blocks=*/ num_blocks,
+      /*block_stride=*/ block_stride,
+      0,
+      kernel_scale2d.data(),
+      (void*) start);
   #else // SCALE_DTYPE_FP32
     xnn_init_blockwise_scale_fp32_params(
       n(), nr(), nr(),
@@ -1668,7 +1676,7 @@ void GemmMicrokernelTester::Test(
         #ifdef SCALE_DTYPE_FP16
           float scale = fp16_ieee_to_fp32_value(fp16_ieee_from_fp32_value(kernel_scale2d[scale_index]));
         #elif defined(SCALE_DTYPE_BF16)
-
+          float scale = math_cvt_f32_bf16(math_cvt_bf16_f32(kernel_scale2d[scale_index]));
         #else 
           float scale = kernel_scale2d[scale_index];
         #endif
