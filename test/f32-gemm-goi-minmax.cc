@@ -15,18 +15,18 @@
 #include <string>
 #include <vector>
 
-#include <xnnpack/allocator.h>
-#include <xnnpack/common.h>
-#include <xnnpack/gemm.h>
-#include <xnnpack/igemm.h>
-#include <xnnpack/isa-checks.h>
-#include <xnnpack/microparams-init.h>
-#include <xnnpack/pack.h>
-#include <xnnpack/ppmm.h>
-#include <xnnpack/requantization.h>
-
-#include "gemm-microkernel-tester.h"
 #include <gtest/gtest.h>
+#include "xnnpack/allocator.h"
+#include "xnnpack/common.h"
+#include "xnnpack/gemm.h"
+#include "xnnpack/igemm.h"
+#include "xnnpack/isa-checks.h"
+#include "xnnpack/microparams-init.h"
+#include "xnnpack/pack.h"
+#include "xnnpack/packw.h"
+#include "xnnpack/ppmm.h"
+#include "xnnpack/requantization.h"
+#include "gemm-microkernel-tester.h"
 
 namespace {
 
@@ -309,10 +309,7 @@ std::vector<GemmTestParams> CreateTests1(
       [](const testing::TestParamInfo<GemmTest::ParamType>& info) {
         return info.param.test_name;
       });
-#endif  // XNN_ARCH_ARM64 && XNN_ENABLE_ASSEMBLY
 
-
-#if XNN_ARCH_ARM64 && XNN_ENABLE_ASSEMBLY
   INSTANTIATE_TEST_SUITE_P(
       F32_GEMM_GOI_MINMAX_1X8__ASM_AARCH64_NEONFMA_LD128_PRFM, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -330,10 +327,7 @@ std::vector<GemmTestParams> CreateTests1(
       [](const testing::TestParamInfo<GemmTest::ParamType>& info) {
         return info.param.test_name;
       });
-#endif  // XNN_ARCH_ARM64 && XNN_ENABLE_ASSEMBLY
 
-
-#if XNN_ARCH_ARM64 && XNN_ENABLE_ASSEMBLY
   INSTANTIATE_TEST_SUITE_P(
       F32_GEMM_GOI_MINMAX_4X8__ASM_AARCH64_NEONFMA_LD128, GemmTest,
       testing::ValuesIn(CreateTests1(

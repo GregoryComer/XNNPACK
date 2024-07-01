@@ -10,6 +10,7 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstdlib>
 #include <functional>
 #include <string>
 
@@ -531,6 +532,9 @@ struct LoopParams {
         return n + step;
       case LoopStepType::NextPrime:
         return NextPrime(n + step);
+      default:
+        std::cerr << "Unknown loop step type " << static_cast<int>(step_type) << std::endl;
+        std::abort();
     }
   }
 };

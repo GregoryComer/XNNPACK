@@ -25,9 +25,11 @@ SET(CMAKE_CXX_EXTENSIONS NO)
 
 
 # Scale dtype expirement.
-#add_compile_definitions(SCALE_CTYPE=uint16_t SCALE_DTYPE_FP16)
-add_compile_definitions(SCALE_CTYPE=uint16_t SCALE_DTYPE_BF16)
+add_compile_definitions(SCALE_CTYPE=uint16_t SCALE_DTYPE_FP16)
+#add_compile_definitions(SCALE_CTYPE=uint16_t SCALE_DTYPE_BF16)
 #add_compile_definitions(SCALE_CTYPE=float SCALE_DTYPE_FP32)
+
+add_compile_definitions(SCALE_SIMD_FP16)
 
 
 # ---[ Options.
@@ -2903,8 +2905,9 @@ IF(XNNPACK_BUILD_TESTS)
 
   ADD_EXECUTABLE(qd8-f32-qb4w-gemm-minmax-test test/qd8-f32-qb4w-gemm-minmax.cc)
   TARGET_INCLUDE_DIRECTORIES(qd8-f32-qb4w-gemm-minmax-test PRIVATE include src test)
-  TARGET_LINK_LIBRARIES(qd8-f32-qb4w-gemm-minmax-test PRIVATE pthreadpool GTest::gtest GTest::gtest_main)
+  TARGET_LINK_LIBRARIES(qd8-f32-qb4w-gemm-minmax-test PRIVATE fp16 pthreadpool GTest::gtest GTest::gtest_main)
   TARGET_LINK_LIBRARIES(qd8-f32-qb4w-gemm-minmax-test PRIVATE gemm-microkernel-tester hardware-config logging microkernels-all microparams-init)
+  TARGET_COMPILE_OPTIONS(qd8-f32-qb4w-gemm-minmax-test PRIVATE -msse4.1)
   ADD_TEST(NAME qd8-f32-qb4w-gemm-minmax-test COMMAND qd8-f32-qb4w-gemm-minmax-test)
 
   ADD_EXECUTABLE(qd8-f32-qc4w-gemm-minmax-test test/qd8-f32-qc4w-gemm-minmax.cc  test/qd8-f32-qc4w-gemm-minmax-2.cc test/qd8-f32-qc4w-gemm-minmax-3.cc test/qd8-f32-qc4w-gemm-minmax-4.cc)

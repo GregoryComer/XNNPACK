@@ -15,18 +15,18 @@
 #include <string>
 #include <vector>
 
-#include <xnnpack/allocator.h>
-#include <xnnpack/common.h>
-#include <xnnpack/gemm.h>
-#include <xnnpack/igemm.h>
-#include <xnnpack/isa-checks.h>
-#include <xnnpack/microparams-init.h>
-#include <xnnpack/pack.h>
-#include <xnnpack/ppmm.h>
-#include <xnnpack/requantization.h>
-
-#include "gemm-microkernel-tester.h"
 #include <gtest/gtest.h>
+#include "xnnpack/allocator.h"
+#include "xnnpack/common.h"
+#include "xnnpack/gemm.h"
+#include "xnnpack/igemm.h"
+#include "xnnpack/isa-checks.h"
+#include "xnnpack/microparams-init.h"
+#include "xnnpack/pack.h"
+#include "xnnpack/packw.h"
+#include "xnnpack/ppmm.h"
+#include "xnnpack/requantization.h"
+#include "gemm-microkernel-tester.h"
 
 namespace {
 
@@ -363,10 +363,7 @@ std::vector<GemmTestParams> CreateTests1(
             &xnn_f16_igemm_minmax_ukernel_1x16__asm_aarch64_neonfp16arith_ld64);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ENABLE_ARM_FP16_VECTOR && XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ENABLE_ARM_FP16_VECTOR && XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F16_IGEMM_4X16__AARCH64_NEONFP16ARITH_LD64, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -418,10 +415,7 @@ std::vector<GemmTestParams> CreateTests1(
             &xnn_f16_igemm_minmax_ukernel_4x16__asm_aarch64_neonfp16arith_ld64);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ENABLE_ARM_FP16_VECTOR && XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ENABLE_ARM_FP16_VECTOR && XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F16_IGEMM_6X16__AARCH64_NEONFP16ARITH_CORTEX_A55, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -473,10 +467,7 @@ std::vector<GemmTestParams> CreateTests1(
             &xnn_f16_igemm_minmax_ukernel_6x16__asm_aarch64_neonfp16arith_cortex_a55);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ENABLE_ARM_FP16_VECTOR && XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ENABLE_ARM_FP16_VECTOR && XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F16_IGEMM_6X16__AARCH64_NEONFP16ARITH_CORTEX_A55R0, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -528,10 +519,7 @@ std::vector<GemmTestParams> CreateTests1(
             &xnn_f16_igemm_minmax_ukernel_6x16__asm_aarch64_neonfp16arith_cortex_a55r0);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ENABLE_ARM_FP16_VECTOR && XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ENABLE_ARM_FP16_VECTOR && XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F16_IGEMM_6X16__AARCH64_NEONFP16ARITH_CORTEX_A75, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -583,10 +571,7 @@ std::vector<GemmTestParams> CreateTests1(
             &xnn_f16_igemm_minmax_ukernel_6x16__asm_aarch64_neonfp16arith_cortex_a75);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ENABLE_ARM_FP16_VECTOR && XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ENABLE_ARM_FP16_VECTOR && XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F16_IGEMM_6X16__AARCH64_NEONFP16ARITH_LD64, GemmTest,
       testing::ValuesIn(CreateTests1(

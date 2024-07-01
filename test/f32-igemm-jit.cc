@@ -15,18 +15,18 @@
 #include <string>
 #include <vector>
 
-#include <xnnpack/allocator.h>
-#include <xnnpack/common.h>
-#include <xnnpack/gemm.h>
-#include <xnnpack/igemm.h>
-#include <xnnpack/isa-checks.h>
-#include <xnnpack/microparams-init.h>
-#include <xnnpack/pack.h>
-#include <xnnpack/ppmm.h>
-#include <xnnpack/requantization.h>
-
-#include "gemm-microkernel-tester.h"
 #include <gtest/gtest.h>
+#include "xnnpack/allocator.h"
+#include "xnnpack/common.h"
+#include "xnnpack/gemm.h"
+#include "xnnpack/igemm.h"
+#include "xnnpack/isa-checks.h"
+#include "xnnpack/microparams-init.h"
+#include "xnnpack/pack.h"
+#include "xnnpack/packw.h"
+#include "xnnpack/ppmm.h"
+#include "xnnpack/requantization.h"
+#include "gemm-microkernel-tester.h"
 
 namespace {
 
@@ -675,10 +675,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_1x8__asm_aarch32_neon_cortex_a53);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_1X8__AARCH32_NEON_CORTEX_A53_PRFM, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -740,10 +737,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_1x8__asm_aarch32_neon_cortex_a53_prfm);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH32_NEON_CORTEX_A7, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -825,10 +819,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch32_neon_cortex_a7);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH32_NEON_CORTEX_A53, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -910,10 +901,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch32_neon_cortex_a53);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH32_NEON_CORTEX_A53_PRFM, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -995,10 +983,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch32_neon_cortex_a53_prfm);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH32_NEON_CORTEX_A55, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1080,10 +1065,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch32_neon_cortex_a55);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH32_NEON_CORTEX_A75, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1165,10 +1147,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch32_neon_cortex_a75);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH32_NEON_CORTEX_A75_PRFM, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1250,10 +1229,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch32_neon_cortex_a75_prfm);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH32_NEON_LD64, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -1400,10 +1376,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_1x8__asm_aarch64_neonfma_cortex_a53);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_1X8__AARCH64_NEONFMA_CORTEX_A53_PRFM, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1465,10 +1438,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_1x8__asm_aarch64_neonfma_cortex_a53_prfm);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_1X8__AARCH64_NEONFMA_CORTEX_A75, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1530,10 +1500,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_1x8__asm_aarch64_neonfma_cortex_a75);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_1X8__AARCH64_NEONFMA_CORTEX_A75_PRFM, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1595,10 +1562,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_1x8__asm_aarch64_neonfma_cortex_a75_prfm);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH64_NEONFMA_CORTEX_A53, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1680,10 +1644,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch64_neonfma_cortex_a53);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH64_NEONFMA_CORTEX_A53_PRFM, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1765,10 +1726,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch64_neonfma_cortex_a53_prfm);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH64_NEONFMA_CORTEX_A55, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1820,10 +1778,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch64_neonfma_cortex_a55);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH64_NEONFMA_CORTEX_A75, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1905,10 +1860,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch64_neonfma_cortex_a75);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH64_NEONFMA_CORTEX_A75_PRFM, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -1990,10 +1942,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch64_neonfma_cortex_a75_prfm);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_4X8__AARCH64_NEONFMA_LD128, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -2045,10 +1994,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_4x8__asm_aarch64_neonfma_ld128);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__AARCH64_NEONFMA_CORTEX_A53, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -2100,10 +2046,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_6x8__asm_aarch64_neonfma_cortex_a53);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__AARCH64_NEONFMA_CORTEX_A53_PRFM, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -2155,10 +2098,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_6x8__asm_aarch64_neonfma_cortex_a53_prfm);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__AARCH64_NEONFMA_CORTEX_A55, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -2240,10 +2180,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_6x8__asm_aarch64_neonfma_cortex_a55);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__AARCH64_NEONFMA_CORTEX_A75, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -2325,10 +2262,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_6x8__asm_aarch64_neonfma_cortex_a75);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__AARCH64_NEONFMA_CORTEX_A75_PRFM, GemmTest,
       testing::ValuesIn(CreateTests2(
@@ -2410,10 +2344,7 @@ std::vector<GemmTestParams> CreateTests2(
             &xnn_f32_igemm_minmax_ukernel_6x8__asm_aarch64_neonfma_cortex_a75_prfm);
     }
   #endif // XNN_ENABLE_ASSEMBLY
-#endif  // XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_ARM64 && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__AARCH64_NEONFMA_LD128, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -2559,10 +2490,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMSIMD32_X86_LOADSPLAT_X1, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -2623,10 +2551,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMSIMD32_X86_LOADSPLAT_X2, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -2687,10 +2612,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMSIMD32_X86_LOADSPLAT_X4, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -2751,10 +2673,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMSIMD32_X86_LOADSPLAT_X8, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -2815,10 +2734,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMSIMD32_X86_SPLAT_XINF, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -2879,10 +2795,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMSIMD32_X86_SPLAT_X1, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -2943,10 +2856,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMSIMD32_X86_SPLAT_X2, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3007,10 +2917,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMSIMD32_X86_SPLAT_X4, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3071,10 +2978,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMSIMD32_X86_XINF, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3138,10 +3042,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMSIMD32_X86_X1, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3205,10 +3106,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMSIMD32_X86_X2, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3272,10 +3170,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMSIMD32_X86_X4, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3403,10 +3298,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_FMA_LOADSPLAT_X1, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3467,10 +3359,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_FMA_LOADSPLAT_X2, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3531,10 +3420,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_FMA_LOADSPLAT_X4, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3595,10 +3481,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_FMA_LOADSPLAT_X8, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3659,10 +3542,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_FMA_SPLAT_XINF, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3723,10 +3603,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_FMA_SPLAT_X1, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3787,10 +3664,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_FMA_SPLAT_X2, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3851,10 +3725,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_FMA_SPLAT_X4, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3915,10 +3786,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_LOADSPLAT_XINF, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -3979,10 +3847,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_LOADSPLAT_X1, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4043,10 +3908,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_LOADSPLAT_X2, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4107,10 +3969,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_LOADSPLAT_X4, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4171,10 +4030,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_LOADSPLAT_X8, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4235,10 +4091,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_SPLAT_XINF, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4299,10 +4152,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_SPLAT_X1, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4363,10 +4213,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_SPLAT_X2, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4427,10 +4274,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8__WASMRELAXEDSIMD32_X86_SPLAT_X4, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4491,10 +4335,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMRELAXEDSIMD32_X86_FMA_XINF, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4558,10 +4399,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMRELAXEDSIMD32_X86_FMA_X1, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4625,10 +4463,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMRELAXEDSIMD32_X86_FMA_X2, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4692,10 +4527,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMRELAXEDSIMD32_X86_FMA_X4, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4759,10 +4591,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMRELAXEDSIMD32_X86_XINF, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4826,10 +4655,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMRELAXEDSIMD32_X86_X1, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4893,10 +4719,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMRELAXEDSIMD32_X86_X2, GemmTest,
       testing::ValuesIn(CreateTests1(
@@ -4960,10 +4783,7 @@ std::vector<GemmTestParams> CreateTests2(
             fused_operators);
     }
   }
-#endif  // XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
 
-
-#if XNN_ARCH_WASMRELAXEDSIMD && XNN_PLATFORM_JIT
   INSTANTIATE_TEST_SUITE_P(
       GENERATE_F32_IGEMM_6X8S4__WASMRELAXEDSIMD32_X86_X4, GemmTest,
       testing::ValuesIn(CreateTests1(
