@@ -152,7 +152,7 @@ void xnn_qd8_f32_qb4w_gemm_minmax_ukernel_3x4c8__sse41_ld128(
         const __m128i vxa2c0 = _mm_cvtepi8_epi16(va2c0);
         a2 += 8;
 
-        const __m128i vb01c01 = _mm_load_si128((const __m128i*) w);
+        const __m128i vb01c01 = _mm_loadu_si128((const __m128i*) w);
         const __m128i vbs01c0 = _mm_slli_epi32(vb01c01, 4);
         const __m128i vb01c0 = _mm_and_si128(vbs01c0, vmask);
         const __m128i vsb01c0 = _mm_cmpgt_epi8(_mm_setzero_si128(), vb01c0);
@@ -165,7 +165,7 @@ void xnn_qd8_f32_qb4w_gemm_minmax_ukernel_3x4c8__sse41_ld128(
         vacc1x1 = _mm_add_epi32(vacc1x1, _mm_madd_epi16(vxa1c0, vxb1c0));
         vacc2x0 = _mm_add_epi32(vacc2x0, _mm_madd_epi16(vxa2c0, vxb0c0));
         vacc2x1 = _mm_add_epi32(vacc2x1, _mm_madd_epi16(vxa2c0, vxb1c0));
-        const __m128i vb23c01 = _mm_load_si128((const __m128i*) ((const int8_t*) w + 16));
+        const __m128i vb23c01 = _mm_loadu_si128((const __m128i*) ((const int8_t*) w + 16));
         const __m128i vbs23c0 = _mm_slli_epi32(vb23c01, 4);
         const __m128i vb23c0 = _mm_and_si128(vbs23c0, vmask);
         const __m128i vsb23c0 = _mm_cmpgt_epi8(_mm_setzero_si128(), vb23c0);
