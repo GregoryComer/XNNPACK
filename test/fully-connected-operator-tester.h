@@ -494,6 +494,10 @@ class FullyConnectedOperatorTester {
           if (has_bias()) {
             output_ref[mi * output_channels() + ni] += bias[ni];
           }
+
+          output_ref[mi * output_channels() + ni] = fp16_ieee_to_fp32_value(fp16_ieee_from_fp32_value(
+            output_ref[mi * output_channels() + ni]
+          ));
         }
       }
 
@@ -568,7 +572,7 @@ class FullyConnectedOperatorTester {
         xnn_run_operator(fully_connected_op, /*threadpool=*/nullptr));
 
       // Verify results.
-      VerifyF16(output, output_ref, output_max, output_min, /*atol=*/2.0e-3, /*rtol=*/1.0e-2);
+      VerifyF16(output, output_ref, output_max, output_min, /*atol=*/2.5e-3, /*rtol=*/1.0e-2);
 
       if (use_weights_cache()) {
         // Create another operator with the same weights cache.

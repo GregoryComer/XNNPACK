@@ -150,17 +150,26 @@ static enum xnn_status create_fully_connected_nc(
   size_t block_scale_bytes = 0;
   size_t num_blocks = 0;
   if (blockwise) {
+    if (block_size == 0 || block_size % 32 != 0) {
+      xnn_log_error(
+        "failed to create %s operator with block_size: %zu: expecting block_size to be a multiple of 32.",
+        xnn_operator_type_to_string(xnn_operator_type_fully_connected_nc_qd8_f16_qb4w), block_size);
+        goto error;
+    }
+
     size_t max_kr = 8; // MAX_KR
     if (round_up_po2(input_channels, max_kr) % block_size != 0) {
       xnn_log_error(
         "failed to create %s operator with input_channels: %zu, and block_size: %zu: expecting input_channels %% block_size == 0.",
         xnn_operator_type_to_string(xnn_operator_type_fully_connected_nc_qd8_f16_qb4w), input_channels, block_size);
+        goto error;
     }
 
     if (block_size <  max_kr || block_size % max_kr != 0 ) {
     xnn_log_error(
         "failed to create %s operator with block_size: %zu: expecting block_size to be > %zu, and multiple of it.",
         xnn_operator_type_to_string(xnn_operator_type_fully_connected_nc_qd8_f16_qb4w), block_size, max_kr);
+        goto error;
     }
 
     num_blocks = round_up_po2(input_channels, max_kr) / block_size;
