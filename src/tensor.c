@@ -452,7 +452,7 @@ enum xnn_status xnn_define_blockwise_quantized_tensor_value(
     xnn_subgraph_t subgraph,
     enum xnn_datatype datatype,
     int32_t zero_point,
-    const uint16_t* scale,
+    const float* scale,
     size_t num_dims,
     size_t channel_dim,
     size_t block_size,
@@ -516,6 +516,7 @@ enum xnn_status xnn_define_blockwise_quantized_tensor_value(
       return xnn_status_unsupported_parameter;
   }
 
+/*
   const size_t channels = dims[channel_dim];
   const size_t block_count = channels / block_size;
   for (size_t channel = 0; channel < channels; channel++) {
@@ -530,6 +531,7 @@ enum xnn_status xnn_define_blockwise_quantized_tensor_value(
       }
     }
   }
+  */
 
   struct xnn_value* value = subgraph->values + external_id;
   if (external_id == XNN_INVALID_VALUE_ID) {

@@ -87,7 +87,7 @@ struct xnn_value {
       };
         struct {
         /// Per-channel-block multiplication factor to convert quantized elements to real representation, bf16 format.
-        const uint16_t* blockwise_scale;
+        const float* blockwise_scale;
         /// Index of the channel dimension with blockwise quantization parameters.
         size_t channel_dimension_blockwise;
         /// Block size.
