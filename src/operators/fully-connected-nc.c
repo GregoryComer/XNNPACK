@@ -270,8 +270,8 @@ static enum xnn_status create_fully_connected_nc(
             /*ksum*/sizeof(float) +
             /*bias*/sizeof(float);
 
-        //xnn_init_blockwise_scale_bf16_params(
-        xnn_init_blockwise_scale_fp32_params(
+        xnn_init_blockwise_scale_bf16_params(
+        // xnn_init_blockwise_scale_fp32_params(
             output_channels, gemm_config->nr, gemm_config->nr,
             gemm_config->nr * weights_stride,
             gemm_config->nr * weights_stride,

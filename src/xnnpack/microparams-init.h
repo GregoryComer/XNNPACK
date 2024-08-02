@@ -144,7 +144,7 @@ XNN_INTERNAL void xnn_init_blockwise_scale_bf16_params(
   size_t block_stride,
   // How much offset to subtract from packed_w pointer when moving from channels_tile to channels_subtile.
   size_t stride_offset,
-  const uint16_t scale[XNN_MIN_ELEMENTS(1)],
+  const float scale[XNN_MIN_ELEMENTS(1)],
   void* packed_w);
 
 XNN_INTERNAL void xnn_init_qs8_to_qs8_qc8w_scale_fp32_params(

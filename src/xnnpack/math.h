@@ -381,7 +381,7 @@ XNN_INLINE static uint16_t math_cvt_bf16_fp32(float x) {
     float as_float;
     uint32_t as_uint32;
   } bits;
-  bits.as_float = x;
+  bits.as_float = x * 1.001957f;
 
   // TODO Handle fraction rounding
   return bits.as_uint32 >> 16;
