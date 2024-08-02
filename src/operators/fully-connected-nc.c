@@ -151,7 +151,7 @@ static enum xnn_status create_fully_connected_nc(
   const bool block_wise = (block_size != 0);
   if (block_wise) {
     num_blocks = input_channels / block_size;
-    block_scale_bytes += num_blocks * sizeof(float);
+    block_scale_bytes += num_blocks * sizeof(uint16_t);
   }
 
   const size_t weights_stride =
