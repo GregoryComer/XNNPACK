@@ -376,7 +376,7 @@ XNN_INLINE static float math_cvt_fp32_bf16(uint16_t x) {
   return bits.as_float;
 }
 
-XNN_INLINE static float math_cvt_bf16_fp32(float x) {
+XNN_INLINE static uint16_t math_cvt_bf16_fp32(float x) {
    union {
     float as_float;
     uint32_t as_uint32;
