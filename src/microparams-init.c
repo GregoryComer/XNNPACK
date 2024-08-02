@@ -997,7 +997,7 @@ void xnn_init_blockwise_scale_bf16_params(
         size_t scale_index = (tile_start + tile_offset) * num_blocks + block_start;
         // 1/16 because the weight are << 4 in the innermost loop to save a shift
         float scale_16 = math_cvt_bf16_fp32(scale[scale_index] / 16.0f);
-        unaligned_indexed_store_u16(packed_w, tile_offset * 2, scale_16);
+        unaligned_indexed_store_u16(packed_w, tile_offset, scale_16);
       }
       packed_w = (void*) ((uintptr_t) packed_w + stride);
     }
@@ -1010,7 +1010,7 @@ void xnn_init_blockwise_scale_bf16_params(
         size_t scale_index = (tile_start + tile_offset) * num_blocks + block_start;
         // 1/16 because the weight are << 4 in the innermost loop to save a shift
         float scale_16 = math_cvt_bf16_fp32(scale[scale_index] / 16.0f);
-        unaligned_indexed_store_u16(packed_w, tile_offset * 2, scale_16);
+        unaligned_indexed_store_u16(packed_w, tile_offset, scale_16);
       }
       packed_w = (void*) ((uintptr_t) packed_w + substride);
     }
