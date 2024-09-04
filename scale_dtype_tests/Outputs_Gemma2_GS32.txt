@@ -1,0 +1,108 @@
+ f32: Once upon a time, there was a little girl who was very shy. She was afraid to speak in front of people. She was afraid to go to school. She was afraid to go to the park. She was afraid to go to the mall. She was afraid to go to the store. She was afraid to go to the doctor. She was afraid to go to the dentist. She was afraid to go to the hospital. She was afraid to go to the police station. She was afraid to go to the fire
+ - - - - - - 
+ f16: Once upon a time, there was a little girl who loved to read. She loved to read so much that she would read anything she could get her hands on. She would read books, she would read magazines, she would read newspapers. She would read anything that she could get her hands on. She would read anything that she could get her hands on. She would read anything that she could get her hands on. She would read anything that she could get her hands on. She would read anything that she could get her
+ - - - - - - 
+ bf16: Once upon a time, there was a little girl who loved to read. She loved to read so much that she would read anything she could get her hands on. She would read books, she would read magazines, she would read newspapers. She would read anything she could get her hands on. She would read anything she could get her hands on. She would read anything she could get her hands on. She would read anything she could get her hands on. She would read anything she could get her hands on. She would
+
+
+ f32: A script to print 1 through 10 in python is: 
+
+def print_numbers():
+    for number in range(1,11):
+        print(number)
+print_numbers()
+
+This script will print the numbers from 1 to 10.
+
+A script to print 1 through 100 in python is: 
+
+def print_numbers():
+    for number in range(1,101):
+        print(number)
+print_numbers()
+
+This script will print the numbers from 
+ - - - - - - 
+ f16: A script to print 1 through 10 in python is: 
+
+def print_numbers(): 
+    for number in range(1, 11): 
+        print(number) 
+print_numbers() 
+
+This script will print the numbers from 1 to 10.
+
+A script to print 1 through 10 in python is: 
+
+def print_numbers(): 
+    for number in range(1, 11): 
+        print(number) 
+print_numbers() 
+
+
+ - - - - - - 
+ bf16: A script to print 1 through 10 in python is: 
+
+def print_numbers():
+    for number in range(1,11):
+        print(number)
+print_numbers()
+
+This script will print the numbers from 1 to 10.
+
+A script to print 1 through 100 in python is: 
+
+def print_numbers():
+    for number in range(1,101):
+        print(number)
+print_numbers()
+
+This script will print the numbers from 
+
+
+ f32: Q: What is the difference between integration and differentiation? A: Integration is the opposite of differentiation.
+
+Q: What is the difference between integration and differentiation? A: Integration is the opposite of differentiation.
+
+Q: What is the difference between integration and differentiation? A: Integration is the opposite of differentiation.
+
+Q: What is the difference between integration and differentiation? A: Integration is the opposite of differentiation.
+
+Q: What is the difference between integration and differentiation? A: Integration is the opposite of differentiation.
+
+Q: What is the difference between integration
+ - - - - - - 
+ f16: Q: What is the difference between integration and differentiation? A: Integration is the process of…
+
+A: Click to see the answer
+
+Q: Find the general solution of the given differential equation. y" - y = x2 - x y(x) = %3D
+
+A: Click to see the answer
+
+Q: Find the general solution of the given differential equation. y" - y = x2 - x y(x) = %3D
+
+A: Click to see the answer
+
+Q: Find the general solution of the given
+ - - - - - - 
+ bf16: Q: What is the difference between integration and differentiation? A: Integration is the process of…
+
+A: Click to see the answer
+
+Q: Find the general solution of the given differential equation. y" - 2y' + y = x-3e*
+
+A: Click to see the answer
+
+Q: Find the general solution of the given differential equation. y" + 4y' + 4y = x-1
+
+A: Click to see the answer
+
+Q: Find the general solution of the given differential equation. y
+
+
+ f32: Q: How does gradient descent work? A: Gradient descent is a method for finding the minimum of a function. It is based on the idea that the function is changing at a constant rate. The gradient of the function is the slope of the function at a given point. The gradient is a vector that points in the direction of the steepest descent. The gradient is the negative of the gradient of the function. The gradient is the negative of the gradient of the function. The gradient is the negative of the gradient of the function. The gradient is
+ - - - - - - 
+ f16: Q: How does gradient descent work? A: Gradient descent is a method of finding the minimum of a function. It is a method of finding the minimum of a function by taking small steps in the direction of the steepest descent. The steepest descent is the direction in which the function is decreasing the most rapidly. The steepest descent is the direction in which the function is decreasing the most rapidly. The steepest descent is the direction in which the function is decreasing the most rapidly. The steepest descent is the direction in which the function is
+ - - - - - - 
+ bf16: Q: How does gradient descent work? A: Gradient descent is a method for finding the minimum of a function. It is a method for finding the minimum of a function. It is a method for finding the minimum of a function. It is a method for finding the minimum of a function. It is a method for finding the minimum of a function. It is a method for finding the minimum of a function. It is a method for finding the minimum of a function. It is a method for finding the minimum of a function. It is a

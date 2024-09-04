@@ -1,0 +1,905 @@
+microsoft/Phi-3.5-mini-instruct, GS=32
+
+[model.layers.0.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.0233), tensor(0.5376), tensor(9.1594))
+    (tensor(0.0233), tensor(0.5373), tensor(9.1561))
+  [bf16s]
+    (tensor(0.0233), tensor(0.5376), tensor(9.1594))
+    (tensor(0.0232), tensor(0.5438), tensor(9.1194))
+[model.layers.0.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0047), tensor(0.1659), tensor(0.8817))
+    (tensor(0.0047), tensor(0.1647), tensor(0.8814))
+  [bf16s]
+    (tensor(0.0047), tensor(0.1659), tensor(0.8817))
+    (tensor(0.0047), tensor(0.1646), tensor(0.8803))
+[model.layers.0.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.0124), tensor(0.2405), tensor(5.1550))
+    (tensor(0.0124), tensor(0.2391), tensor(5.1488))
+  [bf16s]
+    (tensor(0.0124), tensor(0.2405), tensor(5.1550))
+    (tensor(0.0124), tensor(0.2372), tensor(5.1319))
+[model.layers.0.mlp.down_proj]
+  [f16s]
+    (tensor(0.0044), tensor(0.2884), tensor(0.9829))
+    (tensor(0.0044), tensor(0.2845), tensor(0.9815))
+  [bf16s]
+    (tensor(0.0044), tensor(0.2884), tensor(0.9829))
+    (tensor(0.0043), tensor(0.2694), tensor(0.9754))
+[model.layers.1.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.0413), tensor(0.6034), tensor(14.7195))
+    (tensor(0.0410), tensor(0.5738), tensor(14.5683))
+  [bf16s]
+    (tensor(0.0413), tensor(0.6034), tensor(14.7195))
+    (tensor(0.0411), tensor(0.5963), tensor(14.6827))
+[model.layers.1.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0113), tensor(0.1723), tensor(1.9821))
+    (tensor(0.0113), tensor(0.1637), tensor(1.9756))
+  [bf16s]
+    (tensor(0.0113), tensor(0.1723), tensor(1.9821))
+    (tensor(0.0113), tensor(0.1510), tensor(1.9677))
+[model.layers.1.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.0290), tensor(0.7102), tensor(11.8920))
+    (tensor(0.0290), tensor(0.7204), tensor(11.8933))
+  [bf16s]
+    (tensor(0.0290), tensor(0.7102), tensor(11.8920))
+    (tensor(0.0288), tensor(0.7194), tensor(11.7920))
+[model.layers.1.mlp.down_proj]
+  [f16s]
+    (tensor(0.0128), tensor(0.7205), tensor(2.6172))
+    (tensor(0.0129), tensor(0.6798), tensor(2.5846))
+  [bf16s]
+    (tensor(0.0128), tensor(0.7205), tensor(2.6172))
+    (tensor(0.0127), tensor(0.5939), tensor(2.5075))
+[model.layers.2.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.0430), tensor(0.6756), tensor(14.9785))
+    (tensor(0.0424), tensor(0.6946), tensor(14.7728))
+  [bf16s]
+    (tensor(0.0430), tensor(0.6756), tensor(14.9785))
+    (tensor(0.0412), tensor(0.5736), tensor(14.2830))
+[model.layers.2.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0174), tensor(0.2671), tensor(3.1742))
+    (tensor(0.0171), tensor(0.2525), tensor(3.1045))
+  [bf16s]
+    (tensor(0.0174), tensor(0.2671), tensor(3.1742))
+    (tensor(0.0173), tensor(0.2291), tensor(3.1272))
+[model.layers.2.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.0439), tensor(1.4408), tensor(17.7753))
+    (tensor(0.0436), tensor(1.0072), tensor(17.6483))
+  [bf16s]
+    (tensor(0.0439), tensor(1.4408), tensor(17.7753))
+    (tensor(0.0440), tensor(1.4100), tensor(17.8144))
+[model.layers.2.mlp.down_proj]
+  [f16s]
+    (tensor(0.1621), tensor(200.0839), tensor(310.4063))
+    (tensor(0.1654), tensor(220.3376), tensor(345.9430))
+  [bf16s]
+    (tensor(0.1621), tensor(200.0839), tensor(310.4063))
+    (tensor(0.1624), tensor(204.7461), tensor(316.5532))
+[model.layers.3.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.0648), tensor(0.8335), tensor(22.0687))
+    (tensor(0.0640), tensor(0.7632), tensor(21.7246))
+  [bf16s]
+    (tensor(0.0648), tensor(0.8335), tensor(22.0687))
+    (tensor(0.0649), tensor(0.8180), tensor(22.0714))
+[model.layers.3.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0151), tensor(0.4060), tensor(3.0150))
+    (tensor(0.0148), tensor(0.4396), tensor(3.0051))
+  [bf16s]
+    (tensor(0.0151), tensor(0.4060), tensor(3.0150))
+    (tensor(0.0148), tensor(0.4212), tensor(2.9678))
+[model.layers.3.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.0453), tensor(0.5274), tensor(18.8762))
+    (tensor(0.0456), tensor(0.5311), tensor(18.9712))
+  [bf16s]
+    (tensor(0.0453), tensor(0.5274), tensor(18.8762))
+    (tensor(0.0455), tensor(0.6311), tensor(18.9654))
+[model.layers.3.mlp.down_proj]
+  [f16s]
+    (tensor(0.0256), tensor(0.2193), tensor(4.5889))
+    (tensor(0.0258), tensor(0.2150), tensor(4.6243))
+  [bf16s]
+    (tensor(0.0256), tensor(0.2193), tensor(4.5889))
+    (tensor(0.0258), tensor(0.2148), tensor(4.6406))
+[model.layers.4.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.0944), tensor(1.1633), tensor(31.4563))
+    (tensor(0.0945), tensor(1.0426), tensor(31.5888))
+  [bf16s]
+    (tensor(0.0944), tensor(1.1633), tensor(31.4563))
+    (tensor(0.0944), tensor(0.9760), tensor(31.3393))
+[model.layers.4.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0146), tensor(0.4436), tensor(2.8168))
+    (tensor(0.0138), tensor(0.4279), tensor(2.6558))
+  [bf16s]
+    (tensor(0.0146), tensor(0.4436), tensor(2.8168))
+    (tensor(0.0136), tensor(0.4592), tensor(2.6549))
+[model.layers.4.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.0611), tensor(1.8203), tensor(24.2648))
+    (tensor(0.0613), tensor(1.8202), tensor(24.3484))
+  [bf16s]
+    (tensor(0.0611), tensor(1.8203), tensor(24.2648))
+    (tensor(0.0616), tensor(1.8231), tensor(24.4605))
+[model.layers.4.mlp.down_proj]
+  [f16s]
+    (tensor(0.1386), tensor(350.1179), tensor(426.4437))
+    (tensor(0.1387), tensor(350.2722), tensor(426.6197))
+  [bf16s]
+    (tensor(0.1386), tensor(350.1179), tensor(426.4437))
+    (tensor(0.1390), tensor(347.5308), tensor(422.6124))
+[model.layers.5.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1095), tensor(0.9761), tensor(36.0319))
+    (tensor(0.1094), tensor(1.0248), tensor(35.9965))
+  [bf16s]
+    (tensor(0.1095), tensor(0.9761), tensor(36.0319))
+    (tensor(0.1110), tensor(0.9990), tensor(36.5317))
+[model.layers.5.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0225), tensor(0.5498), tensor(4.3573))
+    (tensor(0.0214), tensor(0.5506), tensor(4.0786))
+  [bf16s]
+    (tensor(0.0225), tensor(0.5498), tensor(4.3573))
+    (tensor(0.0221), tensor(0.5305), tensor(4.2383))
+[model.layers.5.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.0655), tensor(0.5952), tensor(27.5724))
+    (tensor(0.0648), tensor(0.4834), tensor(27.2636))
+  [bf16s]
+    (tensor(0.0655), tensor(0.5952), tensor(27.5724))
+    (tensor(0.0654), tensor(0.4770), tensor(27.5621))
+[model.layers.5.mlp.down_proj]
+  [f16s]
+    (tensor(0.0476), tensor(0.4636), tensor(8.8204))
+    (tensor(0.0471), tensor(0.3849), tensor(8.7083))
+  [bf16s]
+    (tensor(0.0476), tensor(0.4636), tensor(8.8204))
+    (tensor(0.0477), tensor(0.3790), tensor(8.8141))
+[model.layers.6.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1333), tensor(1.7156), tensor(44.0801))
+    (tensor(0.1313), tensor(1.5707), tensor(43.3477))
+  [bf16s]
+    (tensor(0.1333), tensor(1.7156), tensor(44.0801))
+    (tensor(0.1308), tensor(1.4272), tensor(43.1219))
+[model.layers.6.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0327), tensor(0.5149), tensor(6.0262))
+    (tensor(0.0312), tensor(0.4882), tensor(5.6722))
+  [bf16s]
+    (tensor(0.0327), tensor(0.5149), tensor(6.0262))
+    (tensor(0.0327), tensor(0.6084), tensor(5.9902))
+[model.layers.6.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.0815), tensor(0.7849), tensor(34.1706))
+    (tensor(0.0794), tensor(0.7326), tensor(33.3166))
+  [bf16s]
+    (tensor(0.0815), tensor(0.7849), tensor(34.1706))
+    (tensor(0.0807), tensor(0.7093), tensor(33.8451))
+[model.layers.6.mlp.down_proj]
+  [f16s]
+    (tensor(0.0692), tensor(0.7492), tensor(12.1337))
+    (tensor(0.0678), tensor(0.7747), tensor(11.8810))
+  [bf16s]
+    (tensor(0.0692), tensor(0.7492), tensor(12.1337))
+    (tensor(0.0690), tensor(0.7395), tensor(12.1364))
+[model.layers.7.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1511), tensor(1.4125), tensor(49.9744))
+    (tensor(0.1495), tensor(1.4481), tensor(49.4365))
+  [bf16s]
+    (tensor(0.1511), tensor(1.4125), tensor(49.9744))
+    (tensor(0.1511), tensor(1.4663), tensor(50.0099))
+[model.layers.7.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0386), tensor(1.2847), tensor(7.1977))
+    (tensor(0.0381), tensor(1.1043), tensor(7.0157))
+  [bf16s]
+    (tensor(0.0386), tensor(1.2847), tensor(7.1977))
+    (tensor(0.0380), tensor(1.0004), tensor(6.9723))
+[model.layers.7.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1007), tensor(2.7226), tensor(40.8248))
+    (tensor(0.0986), tensor(2.9328), tensor(39.9562))
+  [bf16s]
+    (tensor(0.1007), tensor(2.7226), tensor(40.8248))
+    (tensor(0.0998), tensor(2.5613), tensor(40.4848))
+[model.layers.7.mlp.down_proj]
+  [f16s]
+    (tensor(0.1245), tensor(47.7250), tensor(54.9354))
+    (tensor(0.1233), tensor(48.1821), tensor(55.2472))
+  [bf16s]
+    (tensor(0.1245), tensor(47.7250), tensor(54.9354))
+    (tensor(0.1242), tensor(47.9795), tensor(54.9137))
+[model.layers.8.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1681), tensor(1.6003), tensor(55.4267))
+    (tensor(0.1663), tensor(1.9149), tensor(54.9255))
+  [bf16s]
+    (tensor(0.1681), tensor(1.6003), tensor(55.4267))
+    (tensor(0.1675), tensor(1.7819), tensor(55.3221))
+[model.layers.8.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0401), tensor(0.4557), tensor(7.3327))
+    (tensor(0.0418), tensor(0.5425), tensor(7.7336))
+  [bf16s]
+    (tensor(0.0401), tensor(0.4557), tensor(7.3327))
+    (tensor(0.0427), tensor(0.5041), tensor(8.0256))
+[model.layers.8.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1017), tensor(1.1737), tensor(43.0846))
+    (tensor(0.1013), tensor(1.1698), tensor(42.9408))
+  [bf16s]
+    (tensor(0.1017), tensor(1.1737), tensor(43.0846))
+    (tensor(0.1026), tensor(1.4447), tensor(43.7327))
+[model.layers.8.mlp.down_proj]
+  [f16s]
+    (tensor(0.0930), tensor(1.4580), tensor(17.2686))
+    (tensor(0.0926), tensor(1.4663), tensor(17.1448))
+  [bf16s]
+    (tensor(0.0930), tensor(1.4580), tensor(17.2686))
+    (tensor(0.0946), tensor(1.4637), tensor(17.6454))
+[model.layers.9.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1677), tensor(1.6722), tensor(55.7165))
+    (tensor(0.1672), tensor(1.6469), tensor(55.5478))
+  [bf16s]
+    (tensor(0.1677), tensor(1.6722), tensor(55.7165))
+    (tensor(0.1689), tensor(1.6702), tensor(56.6071))
+[model.layers.9.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0445), tensor(0.9733), tensor(8.1086))
+    (tensor(0.0439), tensor(1.1787), tensor(8.0234))
+  [bf16s]
+    (tensor(0.0445), tensor(0.9733), tensor(8.1086))
+    (tensor(0.0445), tensor(0.8519), tensor(8.0807))
+[model.layers.9.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1008), tensor(1.2721), tensor(42.9049))
+    (tensor(0.1007), tensor(1.3529), tensor(42.8261))
+  [bf16s]
+    (tensor(0.1008), tensor(1.2721), tensor(42.9049))
+    (tensor(0.1017), tensor(1.8289), tensor(43.5569))
+[model.layers.9.mlp.down_proj]
+  [f16s]
+    (tensor(0.0957), tensor(1.4938), tensor(17.8778))
+    (tensor(0.0956), tensor(1.3930), tensor(17.8444))
+  [bf16s]
+    (tensor(0.0957), tensor(1.4938), tensor(17.8778))
+    (tensor(0.0971), tensor(1.4951), tensor(18.2145))
+[model.layers.10.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1798), tensor(2.7452), tensor(60.1669))
+    (tensor(0.1828), tensor(2.9919), tensor(61.2979))
+  [bf16s]
+    (tensor(0.1798), tensor(2.7452), tensor(60.1669))
+    (tensor(0.1812), tensor(2.7280), tensor(61.0667))
+[model.layers.10.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0620), tensor(0.4319), tensor(10.9904))
+    (tensor(0.0606), tensor(0.4383), tensor(10.7355))
+  [bf16s]
+    (tensor(0.0620), tensor(0.4319), tensor(10.9904))
+    (tensor(0.0614), tensor(0.5402), tensor(10.8729))
+[model.layers.10.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1095), tensor(1.6026), tensor(46.7982))
+    (tensor(0.1102), tensor(1.7513), tensor(46.9693))
+  [bf16s]
+    (tensor(0.1095), tensor(1.6026), tensor(46.7982))
+    (tensor(0.1098), tensor(1.9465), tensor(47.1898))
+[model.layers.10.mlp.down_proj]
+  [f16s]
+    (tensor(0.1179), tensor(0.9151), tensor(22.0644))
+    (tensor(0.1172), tensor(1.0382), tensor(21.9271))
+  [bf16s]
+    (tensor(0.1179), tensor(0.9151), tensor(22.0644))
+    (tensor(0.1177), tensor(0.8155), tensor(22.2212))
+[model.layers.11.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1818), tensor(2.4367), tensor(60.9641))
+    (tensor(0.1852), tensor(2.0395), tensor(61.8021))
+  [bf16s]
+    (tensor(0.1818), tensor(2.4367), tensor(60.9641))
+    (tensor(0.1849), tensor(2.0087), tensor(62.5182))
+[model.layers.11.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0522), tensor(1.1601), tensor(9.4710))
+    (tensor(0.0488), tensor(1.1319), tensor(8.8070))
+  [bf16s]
+    (tensor(0.0522), tensor(1.1601), tensor(9.4710))
+    (tensor(0.0486), tensor(1.0766), tensor(8.9625))
+[model.layers.11.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1114), tensor(2.6733), tensor(48.5298))
+    (tensor(0.1118), tensor(2.4806), tensor(48.3127))
+  [bf16s]
+    (tensor(0.1114), tensor(2.6733), tensor(48.5298))
+    (tensor(0.1104), tensor(2.8114), tensor(48.3797))
+[model.layers.11.mlp.down_proj]
+  [f16s]
+    (tensor(0.1187), tensor(1.0929), tensor(22.4764))
+    (tensor(0.1181), tensor(1.2390), tensor(22.1642))
+  [bf16s]
+    (tensor(0.1187), tensor(1.0929), tensor(22.4764))
+    (tensor(0.1178), tensor(1.1065), tensor(22.4945))
+[model.layers.12.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1999), tensor(2.1174), tensor(67.1654))
+    (tensor(0.2024), tensor(2.2345), tensor(67.5059))
+  [bf16s]
+    (tensor(0.1999), tensor(2.1174), tensor(67.1654))
+    (tensor(0.2016), tensor(2.3911), tensor(68.0676))
+[model.layers.12.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0691), tensor(1.3591), tensor(12.6246))
+    (tensor(0.0675), tensor(1.0987), tensor(12.1566))
+  [bf16s]
+    (tensor(0.0691), tensor(1.3591), tensor(12.6246))
+    (tensor(0.0640), tensor(1.0149), tensor(11.4762))
+[model.layers.12.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1192), tensor(1.5843), tensor(51.9427))
+    (tensor(0.1192), tensor(1.5221), tensor(51.6989))
+  [bf16s]
+    (tensor(0.1192), tensor(1.5843), tensor(51.9427))
+    (tensor(0.1172), tensor(1.5780), tensor(51.3529))
+[model.layers.12.mlp.down_proj]
+  [f16s]
+    (tensor(0.1316), tensor(2.4740), tensor(24.9541))
+    (tensor(0.1311), tensor(1.7544), tensor(24.7486))
+  [bf16s]
+    (tensor(0.1316), tensor(2.4740), tensor(24.9541))
+    (tensor(0.1289), tensor(2.3418), tensor(24.5401))
+[model.layers.13.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.2139), tensor(2.4809), tensor(72.0189))
+    (tensor(0.2157), tensor(2.5934), tensor(72.3844))
+  [bf16s]
+    (tensor(0.2139), tensor(2.4809), tensor(72.0189))
+    (tensor(0.2119), tensor(2.5519), tensor(71.7819))
+[model.layers.13.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0677), tensor(2.8044), tensor(13.3770))
+    (tensor(0.0638), tensor(2.5546), tensor(12.2889))
+  [bf16s]
+    (tensor(0.0677), tensor(2.8044), tensor(13.3770))
+    (tensor(0.0644), tensor(2.8516), tensor(12.7683))
+[model.layers.13.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1237), tensor(1.6403), tensor(53.8172))
+    (tensor(0.1223), tensor(1.6769), tensor(52.9699))
+  [bf16s]
+    (tensor(0.1237), tensor(1.6403), tensor(53.8172))
+    (tensor(0.1203), tensor(1.4256), tensor(52.5509))
+[model.layers.13.mlp.down_proj]
+  [f16s]
+    (tensor(0.1453), tensor(14.7632), tensor(31.1229))
+    (tensor(0.1434), tensor(14.7937), tensor(30.7640))
+  [bf16s]
+    (tensor(0.1453), tensor(14.7632), tensor(31.1229))
+    (tensor(0.1401), tensor(14.6901), tensor(30.2481))
+[model.layers.14.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.2121), tensor(2.5762), tensor(71.2180))
+    (tensor(0.2110), tensor(2.3360), tensor(70.4680))
+  [bf16s]
+    (tensor(0.2121), tensor(2.5762), tensor(71.2180))
+    (tensor(0.2071), tensor(2.1715), tensor(70.0889))
+[model.layers.14.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0759), tensor(0.7174), tensor(13.5437))
+    (tensor(0.0746), tensor(0.7898), tensor(13.3637))
+  [bf16s]
+    (tensor(0.0759), tensor(0.7174), tensor(13.5437))
+    (tensor(0.0675), tensor(0.8484), tensor(12.0336))
+[model.layers.14.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1226), tensor(2.6394), tensor(53.8999))
+    (tensor(0.1199), tensor(2.0955), tensor(52.3805))
+  [bf16s]
+    (tensor(0.1226), tensor(2.6394), tensor(53.8999))
+    (tensor(0.1176), tensor(2.1985), tensor(51.6990))
+[model.layers.14.mlp.down_proj]
+  [f16s]
+    (tensor(0.1510), tensor(2.6456), tensor(29.0061))
+    (tensor(0.1471), tensor(3.0708), tensor(28.2798))
+  [bf16s]
+    (tensor(0.1510), tensor(2.6456), tensor(29.0061))
+    (tensor(0.1451), tensor(2.3714), tensor(27.7993))
+[model.layers.15.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.2109), tensor(2.3918), tensor(71.3617))
+    (tensor(0.2085), tensor(2.5629), tensor(70.0030))
+  [bf16s]
+    (tensor(0.2109), tensor(2.3918), tensor(71.3617))
+    (tensor(0.2031), tensor(2.3740), tensor(68.7593))
+[model.layers.15.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0786), tensor(1.4877), tensor(14.2574))
+    (tensor(0.0767), tensor(1.3758), tensor(13.7938))
+  [bf16s]
+    (tensor(0.0786), tensor(1.4877), tensor(14.2574))
+    (tensor(0.0780), tensor(1.3585), tensor(14.2817))
+[model.layers.15.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1180), tensor(1.7506), tensor(52.0332))
+    (tensor(0.1164), tensor(1.6032), tensor(51.0885))
+  [bf16s]
+    (tensor(0.1180), tensor(1.7506), tensor(52.0332))
+    (tensor(0.1128), tensor(1.7086), tensor(49.7870))
+[model.layers.15.mlp.down_proj]
+  [f16s]
+    (tensor(0.1472), tensor(1.1699), tensor(28.1409))
+    (tensor(0.1437), tensor(1.5278), tensor(27.4551))
+  [bf16s]
+    (tensor(0.1472), tensor(1.1699), tensor(28.1409))
+    (tensor(0.1413), tensor(1.2237), tensor(27.1282))
+[model.layers.16.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.2075), tensor(2.5919), tensor(69.3690))
+    (tensor(0.2073), tensor(2.5582), tensor(69.0078))
+  [bf16s]
+    (tensor(0.2075), tensor(2.5919), tensor(69.3690))
+    (tensor(0.1997), tensor(2.7327), tensor(66.9900))
+[model.layers.16.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0716), tensor(0.9449), tensor(12.7822))
+    (tensor(0.0749), tensor(1.0053), tensor(13.4160))
+  [bf16s]
+    (tensor(0.0716), tensor(0.9449), tensor(12.7822))
+    (tensor(0.0719), tensor(0.9562), tensor(12.9011))
+[model.layers.16.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1198), tensor(1.4161), tensor(52.8617))
+    (tensor(0.1187), tensor(1.3070), tensor(52.1372))
+  [bf16s]
+    (tensor(0.1198), tensor(1.4161), tensor(52.8617))
+    (tensor(0.1147), tensor(1.3824), tensor(50.6083))
+[model.layers.16.mlp.down_proj]
+  [f16s]
+    (tensor(0.1528), tensor(1.8930), tensor(29.2855))
+    (tensor(0.1511), tensor(1.7315), tensor(28.7686))
+  [bf16s]
+    (tensor(0.1528), tensor(1.8930), tensor(29.2855))
+    (tensor(0.1456), tensor(1.9825), tensor(27.9744))
+[model.layers.17.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.2083), tensor(2.3350), tensor(69.7116))
+    (tensor(0.2094), tensor(2.2682), tensor(69.6874))
+  [bf16s]
+    (tensor(0.2083), tensor(2.3350), tensor(69.7116))
+    (tensor(0.2019), tensor(2.4460), tensor(68.0352))
+[model.layers.17.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0719), tensor(0.8832), tensor(12.8477))
+    (tensor(0.0748), tensor(0.9292), tensor(13.5032))
+  [bf16s]
+    (tensor(0.0719), tensor(0.8832), tensor(12.8477))
+    (tensor(0.0732), tensor(0.9395), tensor(13.1453))
+[model.layers.17.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1196), tensor(1.8377), tensor(52.5813))
+    (tensor(0.1189), tensor(1.7126), tensor(51.8708))
+  [bf16s]
+    (tensor(0.1196), tensor(1.8377), tensor(52.5813))
+    (tensor(0.1152), tensor(1.6770), tensor(50.5190))
+[model.layers.17.mlp.down_proj]
+  [f16s]
+    (tensor(0.1611), tensor(1.4671), tensor(30.7557))
+    (tensor(0.1615), tensor(1.4955), tensor(30.5079))
+  [bf16s]
+    (tensor(0.1611), tensor(1.4671), tensor(30.7557))
+    (tensor(0.1556), tensor(1.3384), tensor(29.5391))
+[model.layers.18.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1982), tensor(2.0159), tensor(65.6056))
+    (tensor(0.1985), tensor(2.0372), tensor(65.3980))
+  [bf16s]
+    (tensor(0.1982), tensor(2.0159), tensor(65.6056))
+    (tensor(0.1915), tensor(1.8462), tensor(63.5265))
+[model.layers.18.self_attn.o_proj]
+  [f16s]
+    (tensor(0.0968), tensor(2.6311), tensor(17.7435))
+    (tensor(0.1007), tensor(2.6609), tensor(18.4437))
+  [bf16s]
+    (tensor(0.0968), tensor(2.6311), tensor(17.7435))
+    (tensor(0.0918), tensor(2.6209), tensor(16.8607))
+[model.layers.18.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1208), tensor(1.1005), tensor(52.5703))
+    (tensor(0.1212), tensor(1.1487), tensor(52.4165))
+  [bf16s]
+    (tensor(0.1208), tensor(1.1005), tensor(52.5703))
+    (tensor(0.1166), tensor(1.0999), tensor(50.6985))
+[model.layers.18.mlp.down_proj]
+  [f16s]
+    (tensor(0.1819), tensor(1.4304), tensor(34.3453))
+    (tensor(0.1833), tensor(1.4764), tensor(34.3761))
+  [bf16s]
+    (tensor(0.1819), tensor(1.4304), tensor(34.3453))
+    (tensor(0.1730), tensor(1.4514), tensor(32.6045))
+[model.layers.19.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1916), tensor(1.8559), tensor(63.0572))
+    (tensor(0.1933), tensor(1.9177), tensor(63.3246))
+  [bf16s]
+    (tensor(0.1916), tensor(1.8559), tensor(63.0572))
+    (tensor(0.1856), tensor(1.9411), tensor(61.1923))
+[model.layers.19.self_attn.o_proj]
+  [f16s]
+    (tensor(0.1071), tensor(2.1620), tensor(20.3905))
+    (tensor(0.1039), tensor(2.0624), tensor(19.7416))
+  [bf16s]
+    (tensor(0.1071), tensor(2.1620), tensor(20.3905))
+    (tensor(0.0971), tensor(1.7806), tensor(18.4764))
+[model.layers.19.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1236), tensor(1.3454), tensor(53.5869))
+    (tensor(0.1232), tensor(1.3055), tensor(53.0884))
+  [bf16s]
+    (tensor(0.1236), tensor(1.3454), tensor(53.5869))
+    (tensor(0.1179), tensor(1.2206), tensor(51.0494))
+[model.layers.19.mlp.down_proj]
+  [f16s]
+    (tensor(0.1996), tensor(3.2010), tensor(36.3567))
+    (tensor(0.1999), tensor(3.3435), tensor(36.1582))
+  [bf16s]
+    (tensor(0.1996), tensor(3.2010), tensor(36.3567))
+    (tensor(0.1904), tensor(3.1376), tensor(34.5594))
+[model.layers.20.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1913), tensor(2.1424), tensor(62.7151))
+    (tensor(0.1929), tensor(2.1209), tensor(63.1100))
+  [bf16s]
+    (tensor(0.1913), tensor(2.1424), tensor(62.7151))
+    (tensor(0.1865), tensor(2.0324), tensor(61.2294))
+[model.layers.20.self_attn.o_proj]
+  [f16s]
+    (tensor(0.1060), tensor(1.1774), tensor(19.3237))
+    (tensor(0.1054), tensor(1.1742), tensor(19.1169))
+  [bf16s]
+    (tensor(0.1060), tensor(1.1774), tensor(19.3237))
+    (tensor(0.1014), tensor(1.1297), tensor(18.2236))
+[model.layers.20.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1245), tensor(1.1720), tensor(54.0099))
+    (tensor(0.1241), tensor(1.1294), tensor(53.3714))
+  [bf16s]
+    (tensor(0.1245), tensor(1.1720), tensor(54.0099))
+    (tensor(0.1190), tensor(1.1215), tensor(51.5404))
+[model.layers.20.mlp.down_proj]
+  [f16s]
+    (tensor(0.2075), tensor(1.7791), tensor(38.9983))
+    (tensor(0.2043), tensor(1.7142), tensor(38.1987))
+  [bf16s]
+    (tensor(0.2075), tensor(1.7791), tensor(38.9983))
+    (tensor(0.1960), tensor(1.7727), tensor(36.7977))
+[model.layers.21.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1863), tensor(1.6539), tensor(60.8328))
+    (tensor(0.1870), tensor(1.6113), tensor(61.0819))
+  [bf16s]
+    (tensor(0.1863), tensor(1.6539), tensor(60.8328))
+    (tensor(0.1818), tensor(1.8619), tensor(59.7496))
+[model.layers.21.self_attn.o_proj]
+  [f16s]
+    (tensor(0.1158), tensor(1.6942), tensor(20.9677))
+    (tensor(0.1189), tensor(1.6279), tensor(21.6706))
+  [bf16s]
+    (tensor(0.1158), tensor(1.6942), tensor(20.9677))
+    (tensor(0.1153), tensor(1.6821), tensor(20.8106))
+[model.layers.21.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1255), tensor(1.4552), tensor(54.2622))
+    (tensor(0.1259), tensor(1.4912), tensor(54.1509))
+  [bf16s]
+    (tensor(0.1255), tensor(1.4552), tensor(54.2622))
+    (tensor(0.1203), tensor(1.2581), tensor(52.0450))
+[model.layers.21.mlp.down_proj]
+  [f16s]
+    (tensor(0.2142), tensor(3.9693), tensor(40.9072))
+    (tensor(0.2164), tensor(4.1641), tensor(41.1205))
+  [bf16s]
+    (tensor(0.2142), tensor(3.9693), tensor(40.9072))
+    (tensor(0.2072), tensor(3.3798), tensor(39.3764))
+[model.layers.22.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1884), tensor(1.7087), tensor(61.1307))
+    (tensor(0.1892), tensor(1.9951), tensor(61.4005))
+  [bf16s]
+    (tensor(0.1884), tensor(1.7087), tensor(61.1307))
+    (tensor(0.1835), tensor(1.8307), tensor(59.6786))
+[model.layers.22.self_attn.o_proj]
+  [f16s]
+    (tensor(0.1247), tensor(1.0898), tensor(22.5083))
+    (tensor(0.1277), tensor(1.0935), tensor(23.1125))
+  [bf16s]
+    (tensor(0.1247), tensor(1.0898), tensor(22.5083))
+    (tensor(0.1216), tensor(1.1820), tensor(21.9494))
+[model.layers.22.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1305), tensor(1.5140), tensor(56.6416))
+    (tensor(0.1312), tensor(1.4423), tensor(56.7607))
+  [bf16s]
+    (tensor(0.1305), tensor(1.5140), tensor(56.6416))
+    (tensor(0.1258), tensor(1.3756), tensor(54.5803))
+[model.layers.22.mlp.down_proj]
+  [f16s]
+    (tensor(0.2346), tensor(2.9331), tensor(44.0582))
+    (tensor(0.2359), tensor(2.5787), tensor(44.2936))
+  [bf16s]
+    (tensor(0.2346), tensor(2.9331), tensor(44.0582))
+    (tensor(0.2261), tensor(2.2811), tensor(42.5338))
+[model.layers.23.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1934), tensor(1.5981), tensor(62.6977))
+    (tensor(0.1945), tensor(1.9188), tensor(63.1340))
+  [bf16s]
+    (tensor(0.1934), tensor(1.5981), tensor(62.6977))
+    (tensor(0.1879), tensor(1.7966), tensor(61.0069))
+[model.layers.23.self_attn.o_proj]
+  [f16s]
+    (tensor(0.1245), tensor(1.3826), tensor(22.2683))
+    (tensor(0.1302), tensor(1.4216), tensor(23.4144))
+  [bf16s]
+    (tensor(0.1245), tensor(1.3826), tensor(22.2683))
+    (tensor(0.1193), tensor(1.1912), tensor(21.2760))
+[model.layers.23.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1355), tensor(1.4654), tensor(58.7793))
+    (tensor(0.1359), tensor(1.4453), tensor(58.8246))
+  [bf16s]
+    (tensor(0.1355), tensor(1.4654), tensor(58.7793))
+    (tensor(0.1306), tensor(1.5522), tensor(56.6579))
+[model.layers.23.mlp.down_proj]
+  [f16s]
+    (tensor(0.2412), tensor(1.7040), tensor(46.2951))
+    (tensor(0.2441), tensor(1.6951), tensor(46.6370))
+  [bf16s]
+    (tensor(0.2412), tensor(1.7040), tensor(46.2951))
+    (tensor(0.2355), tensor(1.7704), tensor(45.1358))
+[model.layers.24.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1958), tensor(1.5639), tensor(63.5637))
+    (tensor(0.1983), tensor(1.8679), tensor(64.3061))
+  [bf16s]
+    (tensor(0.1958), tensor(1.5639), tensor(63.5637))
+    (tensor(0.1899), tensor(1.5422), tensor(61.7308))
+[model.layers.24.self_attn.o_proj]
+  [f16s]
+    (tensor(0.1742), tensor(5.3272), tensor(34.8760))
+    (tensor(0.1833), tensor(4.7337), tensor(35.7860))
+  [bf16s]
+    (tensor(0.1742), tensor(5.3272), tensor(34.8760))
+    (tensor(0.1759), tensor(4.2493), tensor(34.2263))
+[model.layers.24.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1394), tensor(1.3662), tensor(60.6810))
+    (tensor(0.1421), tensor(1.2635), tensor(61.8084))
+  [bf16s]
+    (tensor(0.1394), tensor(1.3662), tensor(60.6810))
+    (tensor(0.1357), tensor(1.3002), tensor(59.0829))
+[model.layers.24.mlp.down_proj]
+  [f16s]
+    (tensor(0.2748), tensor(2.5463), tensor(52.4167))
+    (tensor(0.2863), tensor(2.3073), tensor(54.9241))
+  [bf16s]
+    (tensor(0.2748), tensor(2.5463), tensor(52.4167))
+    (tensor(0.2638), tensor(2.1538), tensor(50.2361))
+[model.layers.25.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.2023), tensor(1.7975), tensor(66.1134))
+    (tensor(0.2081), tensor(2.1309), tensor(68.1467))
+  [bf16s]
+    (tensor(0.2023), tensor(1.7975), tensor(66.1134))
+    (tensor(0.1979), tensor(1.8687), tensor(64.6065))
+[model.layers.25.self_attn.o_proj]
+  [f16s]
+    (tensor(0.2235), tensor(3.7760), tensor(40.4460))
+    (tensor(0.2332), tensor(1.9799), tensor(41.7388))
+  [bf16s]
+    (tensor(0.2235), tensor(3.7760), tensor(40.4460))
+    (tensor(0.2166), tensor(2.1233), tensor(38.9025))
+[model.layers.25.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1458), tensor(1.9302), tensor(63.3714))
+    (tensor(0.1499), tensor(3.1263), tensor(65.4302))
+  [bf16s]
+    (tensor(0.1458), tensor(1.9302), tensor(63.3714))
+    (tensor(0.1417), tensor(1.5984), tensor(61.5922))
+[model.layers.25.mlp.down_proj]
+  [f16s]
+    (tensor(0.2885), tensor(2.1261), tensor(54.7033))
+    (tensor(0.2986), tensor(2.1931), tensor(56.8878))
+  [bf16s]
+    (tensor(0.2885), tensor(2.1261), tensor(54.7033))
+    (tensor(0.2807), tensor(2.0530), tensor(53.0119))
+[model.layers.26.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.1995), tensor(1.6521), tensor(65.0603))
+    (tensor(0.2058), tensor(1.8807), tensor(67.4845))
+  [bf16s]
+    (tensor(0.1995), tensor(1.6521), tensor(65.0603))
+    (tensor(0.1957), tensor(1.6872), tensor(63.7572))
+[model.layers.26.self_attn.o_proj]
+  [f16s]
+    (tensor(0.2084), tensor(2.9705), tensor(37.7359))
+    (tensor(0.2187), tensor(3.5167), tensor(39.9745))
+  [bf16s]
+    (tensor(0.2084), tensor(2.9705), tensor(37.7359))
+    (tensor(0.2041), tensor(2.6951), tensor(36.9554))
+[model.layers.26.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1525), tensor(1.8892), tensor(66.5756))
+    (tensor(0.1574), tensor(1.8376), tensor(69.1451))
+  [bf16s]
+    (tensor(0.1525), tensor(1.8892), tensor(66.5756))
+    (tensor(0.1483), tensor(1.5975), tensor(64.7812))
+[model.layers.26.mlp.down_proj]
+  [f16s]
+    (tensor(0.3113), tensor(3.7088), tensor(59.5929))
+    (tensor(0.3302), tensor(2.9757), tensor(63.7475))
+  [bf16s]
+    (tensor(0.3113), tensor(3.7088), tensor(59.5929))
+    (tensor(0.3033), tensor(2.6273), tensor(57.9775))
+[model.layers.27.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.2064), tensor(1.9815), tensor(67.4844))
+    (tensor(0.2148), tensor(2.0463), tensor(70.7561))
+  [bf16s]
+    (tensor(0.2064), tensor(1.9815), tensor(67.4844))
+    (tensor(0.2032), tensor(1.9318), tensor(66.3677))
+[model.layers.27.self_attn.o_proj]
+  [f16s]
+    (tensor(0.1814), tensor(2.2965), tensor(33.1247))
+    (tensor(0.1955), tensor(2.1229), tensor(36.0507))
+  [bf16s]
+    (tensor(0.1814), tensor(2.2965), tensor(33.1247))
+    (tensor(0.1757), tensor(1.9610), tensor(32.0937))
+[model.layers.27.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1584), tensor(1.4721), tensor(68.6683))
+    (tensor(0.1642), tensor(1.6960), tensor(71.8290))
+  [bf16s]
+    (tensor(0.1584), tensor(1.4721), tensor(68.6683))
+    (tensor(0.1541), tensor(1.4013), tensor(66.7485))
+[model.layers.27.mlp.down_proj]
+  [f16s]
+    (tensor(0.3371), tensor(3.5389), tensor(63.8700))
+    (tensor(0.3568), tensor(3.0214), tensor(68.1539))
+  [bf16s]
+    (tensor(0.3371), tensor(3.5389), tensor(63.8700))
+    (tensor(0.3214), tensor(3.1804), tensor(59.9726))
+[model.layers.28.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.2139), tensor(2.0145), tensor(70.1458))
+    (tensor(0.2235), tensor(2.3784), tensor(74.0179))
+  [bf16s]
+    (tensor(0.2139), tensor(2.0145), tensor(70.1458))
+    (tensor(0.2081), tensor(1.7573), tensor(67.9735))
+[model.layers.28.self_attn.o_proj]
+  [f16s]
+    (tensor(0.2984), tensor(5.4037), tensor(55.1482))
+    (tensor(0.3186), tensor(5.2732), tensor(59.2964))
+  [bf16s]
+    (tensor(0.2984), tensor(5.4037), tensor(55.1482))
+    (tensor(0.2845), tensor(4.8283), tensor(52.2556))
+[model.layers.28.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1683), tensor(1.7005), tensor(72.9733))
+    (tensor(0.1753), tensor(1.9636), tensor(76.7300))
+  [bf16s]
+    (tensor(0.1683), tensor(1.7005), tensor(72.9733))
+    (tensor(0.1628), tensor(1.4687), tensor(70.2062))
+[model.layers.28.mlp.down_proj]
+  [f16s]
+    (tensor(0.3824), tensor(4.0613), tensor(70.8989))
+    (tensor(0.4019), tensor(2.8726), tensor(75.1363))
+  [bf16s]
+    (tensor(0.3824), tensor(4.0613), tensor(70.8989))
+    (tensor(0.3696), tensor(4.2228), tensor(68.0247))
+[model.layers.29.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.2118), tensor(2.1328), tensor(69.7129))
+    (tensor(0.2213), tensor(2.3405), tensor(73.4483))
+  [bf16s]
+    (tensor(0.2118), tensor(2.1328), tensor(69.7129))
+    (tensor(0.2051), tensor(1.9549), tensor(67.2689))
+[model.layers.29.self_attn.o_proj]
+  [f16s]
+    (tensor(0.2792), tensor(2.6012), tensor(50.9831))
+    (tensor(0.2985), tensor(3.0625), tensor(55.0166))
+  [bf16s]
+    (tensor(0.2792), tensor(2.6012), tensor(50.9831))
+    (tensor(0.2689), tensor(2.0504), tensor(48.4167))
+[model.layers.29.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.1840), tensor(3.2004), tensor(77.6382))
+    (tensor(0.1917), tensor(3.2003), tensor(81.6392))
+  [bf16s]
+    (tensor(0.1840), tensor(3.2004), tensor(77.6382))
+    (tensor(0.1779), tensor(3.2068), tensor(74.6173))
+[model.layers.29.mlp.down_proj]
+  [f16s]
+    (tensor(1.0353), tensor(1359.8423), tensor(1740.0619))
+    (tensor(1.0536), tensor(1360.2178), tensor(1740.6401))
+  [bf16s]
+    (tensor(1.0353), tensor(1359.8423), tensor(1740.0619))
+    (tensor(1.0219), tensor(1361.1489), tensor(1740.7147))
+[model.layers.30.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.3619), tensor(11.0625), tensor(154.0399))
+    (tensor(0.3673), tensor(11.2260), tensor(155.3509))
+  [bf16s]
+    (tensor(0.3619), tensor(11.0625), tensor(154.0399))
+    (tensor(0.3544), tensor(11.0116), tensor(153.0093))
+[model.layers.30.self_attn.o_proj]
+  [f16s]
+    (tensor(1.7715), tensor(65.5076), tensor(319.4744))
+    (tensor(1.7806), tensor(64.9865), tensor(320.5288))
+  [bf16s]
+    (tensor(1.7715), tensor(65.5076), tensor(319.4744))
+    (tensor(1.7408), tensor(65.3164), tensor(314.2947))
+[model.layers.30.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.4387), tensor(52.6000), tensor(293.4018))
+    (tensor(0.4460), tensor(52.9978), tensor(297.5438))
+  [bf16s]
+    (tensor(0.4387), tensor(52.6000), tensor(293.4018))
+    (tensor(0.4325), tensor(52.7934), tensor(293.3937))
+[model.layers.30.mlp.down_proj]
+  [f16s]
+    (tensor(0.8449), tensor(123.4249), tensor(224.3144))
+    (tensor(0.8578), tensor(122.2649), tensor(224.1259))
+  [bf16s]
+    (tensor(0.8449), tensor(123.4249), tensor(224.3144))
+    (tensor(0.8222), tensor(123.0747), tensor(221.0202))
+[model.layers.31.self_attn.qkv_proj]
+  [f16s]
+    (tensor(0.5004), tensor(40.8029), tensor(235.2398))
+    (tensor(0.5038), tensor(41.4686), tensor(237.2856))
+  [bf16s]
+    (tensor(0.5004), tensor(40.8029), tensor(235.2398))
+    (tensor(0.4900), tensor(40.9799), tensor(234.0303))
+[model.layers.31.self_attn.o_proj]
+  [f16s]
+    (tensor(1.9634), tensor(1152.6008), tensor(1767.4762))
+    (tensor(1.9862), tensor(1166.5190), tensor(1788.5476))
+  [bf16s]
+    (tensor(1.9634), tensor(1152.6008), tensor(1767.4762))
+    (tensor(1.9291), tensor(1158.1458), tensor(1774.2417))
+[model.layers.31.mlp.gate_up_proj]
+  [f16s]
+    (tensor(0.4225), tensor(6.4212), tensor(191.8018))
+    (tensor(0.4308), tensor(6.1919), tensor(195.2866))
+  [bf16s]
+    (tensor(0.4225), tensor(6.4212), tensor(191.8018))
+    (tensor(0.4162), tensor(6.3309), tensor(189.8437))
+[model.layers.31.mlp.down_proj]
+  [f16s]
+    (tensor(1.7184), tensor(79.4122), tensor(365.8235))
+    (tensor(1.7565), tensor(91.5141), tensor(381.3925))
+  [bf16s]
+    (tensor(1.7184), tensor(79.4122), tensor(365.8235))
+    (tensor(1.5908), tensor(59.1369), tensor(326.1371))
+[lm_head]
+  [f16s]
+    (tensor(6.7939), tensor(46.3272), tensor(4729.6421))
+    (tensor(7.3130), tensor(47.5083), tensor(4970.7227))
+  [bf16s]
+    (tensor(6.7939), tensor(46.3272), tensor(4729.6421))
+    (tensor(6.1765), tensor(47.0757), tensor(4700.3682))
